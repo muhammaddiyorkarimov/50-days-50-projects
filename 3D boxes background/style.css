@@ -1,0 +1,92 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #fafafa;
+	font-family: 'Roboto', sans-serif;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.magic {
+	background-color: #f9ca24;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	border: 0;
+	border-radius: 3px;
+	font-size: 16px;
+	padding: 12px 20px;
+	cursor: pointer;
+	position: fixed;
+	top: 20px;
+	letter-spacing: 1px;
+	box-shadow: 0 3px rgba(249, 202, 36, 0.5);
+	z-index: 100;
+}
+
+.magic:focus {
+	outline: none;
+}
+
+.magic:active {
+	box-shadow: none;
+	transform: translateY(2px);
+}
+
+.boxes {
+	width: 500px;
+	height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	position: relative;
+	transition: 0.4s ease;
+}
+
+.boxes.big {
+	width: 600px;
+	height: 600px;
+}
+
+.boxes.big .box {
+  transform: rotateZ(360deg);
+}
+
+.box {
+	background-image: url('https://cdn.pixabay.com/photo/2019/11/05/20/36/travel-4604499_1280.jpg');
+	background-repeat: no-repeat;
+	background-size: 500px 500px;
+	width: 125px;
+	height: 125px;
+	position: relative;
+	transition: 0.4s ease;
+}
+
+.box::after {
+	content: '';
+	background-color: #f6e58d;
+	position: absolute;
+	width: 15px;
+	height: 100%;
+	right: -15px;
+	top: 8px;
+	transform: skewY(45deg);
+}
+
+.box::before {
+	content: '';
+	background-color: #f6e58d;
+	position: absolute;
+	width: 100%;
+	height: 15px;
+	bottom: -15px;
+	left: 8px;
+	transform: skewX(45deg);
+}
